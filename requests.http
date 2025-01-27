@@ -1,0 +1,29 @@
+@api_uri = http://localhost:8080
+
+# ---------------------------------------------------------------------
+# Theme configuration
+# ---------------------------------------------------------------------
+###
+PUT {{api_uri}}/theme
+    ?theme=Vietnamese dishes
+
+###
+PUT {{api_uri}}/theme
+    ?theme=Deutsche Bundeskanzler
+
+###
+PUT {{api_uri}}/theme
+    ?theme=Lustige Frisörnamen
+
+###
+GET {{api_uri}}/theme
+
+# ---------------------------------------------------------------------
+# Retrieving names
+# ---------------------------------------------------------------------
+
+###
+GET {{api_uri}}/next
+
+###
+GET {{api_uri}}/

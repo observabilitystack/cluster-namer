@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: cluster-namer
+  ai:
+    retry:
+      max-attempts: 4
+      on-http-codes:
+        - 429
+    openai:
+      api-key: ${OPENROUTER_API_KEY}
+      base-url: https://openrouter.ai/api
+
+server:
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web.base-path: /
+    web:
+      exposure:
+        include: health, prometheus
+      path-mapping:
+        prometheus: metrics
+
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: /openapi.yaml
